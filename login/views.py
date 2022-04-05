@@ -17,7 +17,8 @@ class LoginView(FormView):
     template_name = 'login.html'
 
     def post(self, request, *args, **kwargs):
-        import pdb; pdb.set_trace()
+        #this needs to clear URL query params on error
+
         form = self.get_form()
         if form.is_valid():
             email, password = form.cleaned_data['email'], form.cleaned_data['password']
